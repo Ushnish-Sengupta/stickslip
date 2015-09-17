@@ -51,8 +51,9 @@ end
 plot(t,theta);
 hold on
 plot(t,w);
-t=t.'; w=w.'; theta=theta.';
-tabledata=table(t,theta,w);
+t=t.'; w=w.'; theta=theta.'; % transposing row vectors to column vectors
+tabledata=table(t,theta,w); % create table
+writetable(tabledata,'StickSlipData.txt','Delimiter','	');
 
 
     
