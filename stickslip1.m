@@ -48,11 +48,12 @@ while(t(i)<runtime)
     w0=w(i-1);
     t0=t(i-1);
 end
-tabledata=table(t,theta,w);
-writetable(tabledata)
 plot(t,theta);
 hold on
 plot(t,w);
+t=t.'; w=w.'; theta=theta.';
+tabledata=table(t,theta,w);
+
 
     
         
