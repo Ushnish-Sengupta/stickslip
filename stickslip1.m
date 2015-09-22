@@ -1,4 +1,4 @@
-%loswald (>.<)
+% loswald (>.<)
 runtime=16;
 % Defining time displacement and velocity arrays
 t=[0:0.0005:runtime];
