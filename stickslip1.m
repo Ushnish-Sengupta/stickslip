@@ -1,9 +1,11 @@
 % loswald (>.<)
 runtime=16;
+
 % Defining time displacement and velocity arrays
 t=[0:0.0005:runtime];
 theta=zeros(1,size(t,2)); % initializing x and v as zero arrays of the same dimension as t
 w=zeros(1,size(t,2));
+
 % Initializing variables
 theta0=0;
 w0=0;
@@ -23,6 +25,7 @@ kspring=45; % spring constant
 kro=kspring*ro*ro; % effective rotational spring constant such that springtorque=kro*theta
 jdisk=0.5*m*(ro^2+ri^2); % moment of inertia
 i=2; %index, starts at 2 because (i-1) is used in the while loop
+
 while(t(i)<runtime)
     % this loop is slip phase
     % loop ends when condition for starting of stick is satisfied
@@ -48,12 +51,14 @@ while(t(i)<runtime)
     w0=w(i-1);
     t0=t(i-1);
 end
+
+% presentation of results
 plot(t,theta);
 hold on
 plot(t,w);
 t=t.'; w=w.'; theta=theta.'; % transposing row vectors to column vectors
 tabledata=table(t,theta,w); % create table
-writetable(tabledata,'StickSlipData.txt','Delimiter','	');
+writetable(tabledata,'StickSlipData.txt','Delimiter',' ');
 
 
     
